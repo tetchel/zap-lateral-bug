@@ -1,0 +1,22 @@
+{
+  "name": "zap-lateral-bug",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tetchel/zap-lateral-bug.git",
+  "author": "Tim Etchells <tetchel@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "pg": "^8.8.0",
+    "ts-node": "^10.9.1",
+    "zapatos": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.6.5",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "run-db": "docker build -t zap-lateral-bug . && docker run -p 5432:5432 zap-lateral-bug",
+    "run": "ts-node src/main.ts"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "db": {
+    "user": "zap",
+    "password": "atos",
+    "port": 5432
+  },
+  "outDir": "src/",
+  "progressListener": true
+}

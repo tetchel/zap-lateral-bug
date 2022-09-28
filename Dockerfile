@@ -1,0 +1,9 @@
+FROM postgres:14.4
+
+COPY ./*.sql ./docker-entrypoint-initdb.d/
+
+ENV POSTGRES_HOSTNAME=localhost
+ENV POSTGRES_PORT=5432
+EXPOSE 5432
+ENV POSTGRES_USER=zap
+ENV POSTGRES_PASSWORD=atos
