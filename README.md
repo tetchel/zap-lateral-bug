@@ -18,13 +18,13 @@ The workaround I've been using is `selectOne` in laterals where the joined row m
 
 Expected output:
 ```
-row 0 has a child
+parent row 0 has a child
 ```
 then, a selectExactlyOne error because row 1 has no matching child.
 
 Actual output:
 ```
-row 0 has a child
-row 1 has no child
+parent row 0 has a child
+parent row 1 has no child!
 done main
 ```

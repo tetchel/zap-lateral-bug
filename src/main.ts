@@ -8,6 +8,12 @@ const main = async () => {
     password: 'atos',
   })
 
+  const parents = await db.select('parent_table', db.all).run(pool)
+  const children = await db.select('child_table', db.all).run(pool)
+  console.log('parent_table', parents)
+  console.log('child_table', children)
+
+
   const selection = await db.select('parent_table', db.all, {
     lateral: {
       child: db.selectExactlyOne('child_table', { parent_id: db.parent('id')})
@@ -16,10 +22,10 @@ const main = async () => {
 
   selection.forEach((row, i) => {
     if (row.child) {
-      console.log(`row ${i} has a child`)
+      console.log(`parent row ${i} has a child`)
     }
     else if (row.child == null) {   // row.child is 'never'
-      console.error(`row ${i} has no child`)
+      console.log(`parent row ${i} has no child!`)
     }
   })
 }
